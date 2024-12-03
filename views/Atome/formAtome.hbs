@@ -1,0 +1,43 @@
+<div class="center" style="padding-top: 4px;padding-bottom: 4px;">
+<h1> Express App : {{title}} {{form_action}}</h1>
+    <form method="POST" action="{{form_action}}" id="formAddUser">
+        <table class="center">
+            <tr>
+                <td style="width:70%">
+                    <div class="inputbox">
+                        <input type="text" name="nom" class="form-control" required/>
+                        <span>Nom de l'atome</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" name="symbole" class="form-control" required/>
+                        <span>Symbole</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" name="numero" class="form-control" required/>
+                        <span>Numéro</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" name="electron" class="form-control" required/>
+                        <span>Nombre d'électrons</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" name="masse_volumique" class="form-control" required/>
+                        <span>Masse volumique</span>
+                    </div>
+                     <div class="inputbox">
+                        <input type="text" name="masse_atomique" class="form-control" required/>
+                        <span>Masse atomique</span>
+                    </div>
+                    <div class="inputbox">
+                       <input type="text" name="is_radioactif" class="form-control" required/>
+                       <span> Radioactif ? 1 ou 0</span>
+                    </div>
+                    <div class="inputbox">
+                        <button type="submit" id="formAddUser" class="button">Ajouter l'atome</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+{{!-- Script de validation du formulaire de modification --}}

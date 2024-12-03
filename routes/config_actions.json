@@ -159,10 +159,69 @@
         "sql_query": "DELETE FROM users WHERE id_users=?",
         "redirect": "/users"
     },
-    "GET/jsonCountries": {
+
+    "----": "delimiter",
+
+    "GET/newAtome": {
+        "controler": "getView",
+        "view": "Atome/formAtome",
+        "form_action": "/createAtome"
+    },
+    "GET/deleteAtome": {
+        "controler": "sql/deleteSQLById",
+        "sql_query": "DELETE FROM atome WHERE id=?",
+        "redirect": "/atomes"
+    },
+    "GET/atomes": {
         "controler": "sql/selectSQL",
-        "sql_query": "SELECT * FROM countries",
-        "view": "Countries/tabcountries.hbs",
+        "sql_query": "SELECT * FROM atome",
+        "view": "Atome/liste_atomes"
+    },
+    "POST/createAtome": {
+        "controler": "sql/insertSQL",
+        "sql_query": "INSERT INTO atome (nom, symbole, numero, electron, masse_volumique, masse_atomique, is_radioactif) VALUES( ?,?,?,?,?,?,?)",
+        "params_query": [
+            "nom",
+            "symbole",
+            "numero",
+            "electron",
+            "masse_volumique",
+            "masse_atomique",
+            "is_radioactif"
+        ],
+        "redirect": "/atomes"
+    },
+    "POST/modifyAtome": {
+        "controler": "sql/updateSQL",
+        "sql_query": "UPDATE atome SET nom=?, symbole=?, numero=?, electron=?, masse_volumique=?, masse_atomique=?, is_radioactif=? WHERE id=?",
+        "params_query": [
+            "nom",
+            "symbole",
+            "numero",
+            "electron",
+            "masse_volumique",
+            "masse_atomique",
+            "is_radioactif"
+        ],
+        "redirect": "/atomes"
+    }
+,
+    "GET/formAtome": {
+        "controler": "sql/selectSQL",
+        "sql_query": "SELECT * FROM atome where id=?",
+        "view": "Atome/formAtomes",
+        "form_action": "modifyAtome"
+    },
+    "GET/tabAtomes": {
+        "controler": "sql/selectSQL",
+        "sql_query": "SELECT * FROM atome",
+        "view": "Atome/tableAtome"
+    },
+    "GET/jsonAtome":{
+        "controler": "sql/selectSQL",
+        "sql_query": "SELECT * FROM atome",
         "return_type": "application/json"
     }
+
 }
+

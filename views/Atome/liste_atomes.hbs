@@ -1,0 +1,30 @@
+<div class="center">
+    <h1> Express App : {{title}}</h1>
+    <br>
+    <div class="inputbox">
+        <select name="atomes" id="atomes">
+            {{#compare data null operator="=="}}
+                <option value="rien">Il n'y a pas de données dans la base users</option>
+            {{else}}
+                <option value="0">Sélectionnez un atome</option>
+                {{#each data}}
+                    <option value="{{this.id}}">{{this.nom}}</option>
+                {{/each}}
+            {{/compare}}
+        </select>
+    </div>
+    <h2>or</h2><br />
+    <div class="inputbox">
+        <button id="newAtome">Creéer un atome</button>
+    </div>
+</div>
+<script>
+    var usr = document.getElementById('atomes');
+    usr.addEventListener('change', function (evt) {
+        window.location = "/formAtome/" + usr.value;
+    });
+    var btn_new = document.getElementById('newAtome');
+    btn_new.addEventListener('click', function (evt) {
+        window.location = "/newAtome";
+    });
+</script>

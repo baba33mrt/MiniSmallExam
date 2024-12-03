@@ -1,0 +1,53 @@
+<div class="center" style="padding-top: 4px;padding-bottom: 4px;">
+<h1> Express App : {{title}}</h1>
+    <form method="POST" action="/modifyAtome/{{data.id}}" id="formAddUser">
+        <table class="center">
+            <tr>
+                <td style="width:70%">
+                    <div class="inputbox">
+                        <input type="text" value="{{data.nom}}"name="nom" class="form-control" required/>
+                        <span>Nom de l'atome</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" value="{{data.symbole}}" name="symbole" class="form-control" required/>
+                        <span>Symbole</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="number" value="{{data.numero}}" name="numero" class="form-control" required/>
+                        <span>Numéro</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" value="{{data.electron}}" name="electron" class="form-control" required/>
+                        <span>Nombre d'électrons</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" value="{{data.masse_volumique}}" name="masse_volumique" class="form-control" required/>
+                        <span>Masse volumique</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" value="{{data.masse_atomique}}" name="masse_atomique" class="form-control" required/>
+                        <span>Masse atomique</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" value="{{data.is_radioactif}}" name="is_radioactif" class="form-control" required/>
+                        <span> Radioactif ? 1 ou 0</span>
+                    </div>
+                    <div class="inputbox">
+                        <button type="submit" id="formAddUser" class="button">Modifier l'atome</button>
+                    </div>
+                    <div class="inputbox">
+                        <button type="button" id="delbtn" class="button">Supprimer l'atome'</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+{{!-- Script de validation du formulaire de modification --}}
+<script>
+
+    const btn_del = document.getElementById('delbtn');
+    btn_del.addEventListener('click', function (evt) {
+        window.location = "/deleteAtome/{{data.id}}";
+    });
+</script>

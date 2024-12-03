@@ -5,11 +5,11 @@
     "sequelize": {
         "used": "True",
         "dialect": "mariadb",
-        "host": "localhost",
+        "host": "admin.mrt33.fr",
         "port": "3306",
-        "databaseName": "R504TP",
-        "userName": "admin",
-        "password": "azerty"
+        "databaseName": "s41_R504TP",
+        "userName": "u41_cUEc3ClM6F",
+        "password": "*******"
     },
     "mongodb": {
         "used": "False",
